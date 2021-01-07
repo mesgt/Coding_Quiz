@@ -58,9 +58,11 @@ body {
     font-size: 30px;
     font-weight: bolder;
 }
-#qContent {
+
+#content {
 
     display: block;
+    visibility: hidden;
     margin: 80px auto;
     text-align: center;
     font-size: 30px;
@@ -71,21 +73,8 @@ body {
     position: relative;
 }
 
-
-/* 
-#answers {
-    position: absolute;
-    top: 20px;
+.options {
+    background-color: rgb(226, 224, 224);
+    font-size: 30px;
+    margin-bottom: 20px;
 }
-#bTwo {
-    position: absolute;
-    bottom: 30px;
-}
-#bThree {
-    position: absolute;
-    bottom: 40px;
-}
-#bFour {
-    position: absolute;
-    bottom: 50px;
-} */
