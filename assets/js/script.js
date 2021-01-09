@@ -7,6 +7,8 @@ var userEl = document.getElementById("score");
 var resultEl = document.getElementById("questionOutcome");
 var userInitials = document.getElementById("initials");
 var userSubmit = document.getElementById("submit");
+var quizReset = document.getElementById("clear"); //btn on highScores.html
+var redoQuiz = document.getElementById("home"); //btn on highScores.html
 
 var qEl = document.getElementById("question");
 var ansA = document.getElementById("answerA");
@@ -68,34 +70,31 @@ var docTime=0;
 
 //Start timer for quiz
 function quizTimer() {
-  // e.preventDefault();  THIS IS NOT WORKING
   var timeLeft = 60;
   timeInterval = setInterval(function () {
     timeLeft = timeLeft-docTime;
     timeEl.textContent = "Your Timer: " + timeLeft + " seconds";
     docTime=0
     timeLeft--;
-    // console.log(timeLeft);
     if (timeLeft <= 0) {
       clearInterval(timeInterval);
       timeEl.textContent = "You are out of time!";
-      finalScore(); //initiate a function to show results and enter initials to record score.
+      finalScore(); 
     }
   }, 1000);
 };
 
 function quizEvent() {
-  questionDisplay.style.display = "block"; //brings up the Q
-  console.log(i)
+  questionDisplay.style.display = "block"; 
   if(i<qArr.length){
-    var test = qArr[i].q;//loops through all Q in arr
-    optOne = qArr[i].opt[0]; //button 1
-    optTwo = qArr[i].opt[1]; //button 2
-    optThree = qArr[i].opt[2]; //button 3
-    optFour = qArr[i].opt[3]; //button 4
-    optFive = qArr[i].opt[4]; //button 5
+    var test = qArr[i].q;
+    optOne = qArr[i].opt[0];
+    optTwo = qArr[i].opt[1]; 
+    optThree = qArr[i].opt[2]; 
+    optFour = qArr[i].opt[3]; 
+    optFive = qArr[i].opt[4]; 
 
-    qEl.textContent = test; //connects Q and options to html
+    qEl.textContent = test; 
     ansA.textContent = optOne;
     ansB.textContent = optTwo;
     ansC.textContent = optThree;
@@ -125,70 +124,65 @@ function quizEvent() {
       quizEvent();
     });
 
-    ansB.addEventListener("click", function () {//select option B
+    ansB.addEventListener("click", function () {
       var correctAns = qArr[i].ans;
-      if (optTwo === correctAns) { //condition has to be met if correct answer is chosen
+      if (optTwo === correctAns) { 
         resultEl.style.display = "block";
-        resultEl.textContent = "Correct!"; //correct answer is chosen. Display message "Correct". 
+        resultEl.textContent = "Correct!"; 
         totalScore +=20;
       }
       else {
         resultEl.style.display = "block";
         resultEl.textContent = "Wrong answer";
-        docTime = 5//incorrect answer is chosen. deduct 5 sec from timeLeft.NEED HELP HERE.      }
+        docTime = 5
       }
       i++
       quizEvent();
       });
 
-    ansC.addEventListener("click", function () {//select option C
+    ansC.addEventListener("click", function () {
       var correctAns = qArr[i].ans;
-      if (optThree === correctAns) { //condition has to be met if correct answer is chosen
+      if (optThree === correctAns) { 
         resultEl.style.display = "block";
-        resultEl.textContent = "Correct!"; //correct answer is chosen. Display message "Correct". 
+        resultEl.textContent = "Correct!"; 
         totalScore +=20;
       }
       else {
         resultEl.style.display = "block";
         resultEl.textContent = "Wrong answer";
-        docTime = 5//incorrect answer is chosen. deduct 5 sec from timeLeft.NEED HELP HERE.      }
+        docTime = 5;
     }
     i++
     quizEvent();
   });
 
-    ansD.addEventListener("click", function () {//select option D
+    ansD.addEventListener("click", function () {
       var correctAns = qArr[i].ans;
-      if (optFour === correctAns) { //condition has to be met if correct answer is chosen
+      if (optFour === correctAns) { 
         resultEl.style.display = "block";
-        resultEl.textContent = "Correct!"; //correct answer is chosen. Display message "Correct". 
+        resultEl.textContent = "Correct!"; 
         totalScore +=20;
       }
       else {
         resultEl.style.display = "block";
         resultEl.textContent = "Wrong answer";
-        docTime = 5//incorrect answer is chosen. deduct 5 sec from timeLeft.NEED HELP HERE.      }
+        docTime = 5;
     }
     i++
     quizEvent();
   });
 
-    ansE.addEventListener("click", function () {//select option E
+    ansE.addEventListener("click", function () {
       var correctAns = qArr[i].ans;
-      // console.log("Answer is " + qArr[i].ans);
-      if (optFive == correctAns) { //condition has to be met if correct answer is chosen
-        // console.log(ansE);
-        // console.log(correctAns);
+      if (optFive == correctAns) { 
         resultEl.style.display = "block";
-        resultEl.textContent = "Correct!"; //correct answer is chosen. Display message "Correct". 
+        resultEl.textContent = "Correct!";
         totalScore +=20;
       }
       else {
-        console.log("selected" + optFive);
-        console.log(correctAns);
         resultEl.style.display = "block";
         resultEl.textContent = "Wrong answer";
-        docTime = 5//incorrect answer is chosen. deduct 5 sec from timeLeft.NEED HELP HERE.      }
+        docTime = 5;
     }
     i++
     quizEvent();
@@ -197,7 +191,7 @@ function quizEvent() {
   function finalScore() {
     resultEl.textContent = "";
     questionDisplay.textContent = "";
-    scoreEl.style.display = "block";//brings up the final score
+    scoreEl.style.display = "block";
     userEl.style.display = "block";
     scoreEl.textContent = "Your Score: " + totalScore + "%";
   }
@@ -227,5 +221,9 @@ function getInitials() {
   })
   localStorage.setItem("highScores", JSON.stringify(highScores));
   displayHighScores();
-  console.log(highScores);
 };
+
+//Reset button
+
+
+//Return to Quiz button

@@ -16,4 +16,4 @@ When the score is recorded, the user is taken to a new page where they can see a
 
 gitHub: (https://github.com/mesgt/Coding_Quiz)
 
-Published website: (https://mesgt.github.io/Coding_Quiz/.)
+Published website: (https://mesgt.github.io/Coding_Quiz/)
