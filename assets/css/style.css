@@ -31,8 +31,21 @@ body {
     padding-top: 20px;
 }
 
+@media screen and (max-width: 992px) {
+#mainTitle {
+    font-size: 35px;
+}
+}
+
+@media screen and (min-width: 993px) {
+    #mainTitle {
+        font-size: 50px;
+    }
+    }
+
+
 #subTitle {
-    font-size: 40px;
+    font-size: 1.875em;
 }
 
 #description {
@@ -60,9 +73,7 @@ body {
 }
 
 #content {
-
-    display: block;
-    visibility: hidden;
+    display: none;
     margin: 80px auto;
     text-align: center;
     font-size: 30px;
@@ -77,4 +88,12 @@ body {
     background-color: rgb(226, 224, 224);
     font-size: 30px;
     margin-bottom: 20px;
+}
+
+#questionOutcome, #score {
+    display:none;
+}
+
+#initials, #submit {
+    font-size: 30px;
 }

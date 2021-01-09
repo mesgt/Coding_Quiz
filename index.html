@@ -10,13 +10,13 @@
 </head>
 
 <body>
-    <a id=highScore href=#>High Scores</a>
-    <div id=time> Your Timer: 60 seconds
+    <a id="highScore" href=#>High Scores</a>
+    <div id="time"> Your Timer: 60 seconds
     </div>
     <div class="wrapper">
         <div class="container">
-            <h1 id=mainTitle>SUPERNATURAL...</h1>
-            <h1 id=subTitle>are you a superfan?</h1>
+            <h1 id="mainTitle">SUPERNATURAL...</h1>
+            <h1 id="subTitle">are you a superfan?</h1>
 
             <h2 id="description">
                 <p>So you think you know everything about one of the greatest shows ever made--Supernatural?</p>
@@ -27,21 +27,29 @@
             <button id="begin">Start Quiz</button>
         </div>
     </div>
-    <div id=content> 
-        <h3 id=question>Question will go here...</h3>
-        <h3> 
-            <button class= options id=answerA>A. Option 1</button> <br>
-            <button class= options id=answerB>B. Option 2</button> <br>
-            <button class= options id=answerC>C. Option 3</button> <br>
-            <button class= options id=answerD>D. Option 4</button> <br>
-            <button class= options id=answerE>E. Option 5</button> <br>
+    <div id="content">
+        <h3 id="question">Question will go here...</h3>
+        <h3>
+            <button class="options" id="answerA">A. Option 1</button> <br>
+            <button class="options" id="answerB">B. Option 2</button> <br>
+            <button class="options" id="answerC">C. Option 3</button> <br>
+            <button class="options" id="answerD">D. Option 4</button> <br>
+            <button class="options" id="answerE">E. Option 5</button> <br>
         </h3>
+        <h3 id="questionOutcome">Result will go here</h3>
     </div>
-    <div id=qResult>
+    <div id="qResult">
     </div>
-
+    <div id="score" class="container">
+        <h2 id="scoreDisplay">Your Final Score:</h2>
+        <form id="userInitials">
+            <input placeholder="Your initials" id="initials" />
+            <button id="submit">Submit</button>
+        </form>
+    </div>
+    </div>
     <script src="./assets/js/script.js"></script>
-    <script src="./assets/js/questions.js"></script>
+
 </body>
 
 </html>
