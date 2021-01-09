@@ -4,6 +4,9 @@ var startQuiz = document.getElementById("begin");
 var questionDisplay = document.getElementById("content");
 var scoreEl = document.getElementById("scoreDisplay");
 var userEl = document.getElementById("score");
+var resultEl = document.getElementById("questionOutcome");
+var userInitials = document.getElementById("initials");
+var userSubmit = document.getElementById("submit");
 
 var qEl = document.getElementById("question");
 var ansA = document.getElementById("answerA");
@@ -11,21 +14,21 @@ var ansB = document.getElementById("answerB");
 var ansC = document.getElementById("answerC");
 var ansD = document.getElementById("answerD");
 var ansE = document.getElementById("answerE");
-var resultEl = document.getElementById("questionOutcome");
 
-var i=0;
+var i = 0;
 var points = 0;
 var totalScore = 0;
+var score = 0;
 
-var optOne; //button 1
-var optTwo; //button 2
-var optThree; //button 3
-var optFour; //button 4
-var optFive; //button 5
+var optOne;
+var optTwo; 
+var optThree; 
+var optFour; 
+var optFive; 
 var docTime;
 var timeInterval;
 
-//Q&A array
+//Q&A Array
 var qArr = [
   {
     q: "What color is the sky?",
@@ -54,7 +57,6 @@ var qArr = [
   },
 ];
 
-
 //click on Start Quiz button
 startQuiz.addEventListener("click", function () {
   mainEl.textContent = "";
@@ -64,7 +66,7 @@ startQuiz.addEventListener("click", function () {
 
 var docTime=0;
 
-//start timer for quiz
+//Start timer for quiz
 function quizTimer() {
   // e.preventDefault();  THIS IS NOT WORKING
   var timeLeft = 60;
@@ -107,17 +109,17 @@ function quizEvent() {
     timeEl.textContent = "";
   }
 }
-    ansA.addEventListener("click", function () { //select option A//should be on the global scope
-      var correctAns = qArr[i].ans; //ID of correct answer for each Q
-      if (optOne === correctAns) { //condition has to be met if correct answer is chosen
+    ansA.addEventListener("click", function () { 
+      var correctAns = qArr[i].ans;
+      if (optOne === correctAns) { 
         resultEl.style.display = "block";
-        resultEl.textContent = "Correct!";//correct answer is chosen. Display message "Correct". 
+        resultEl.textContent = "Correct!"; 
         totalScore +=20;
       }
       else {
         resultEl.style.display = "block";
         resultEl.textContent = "Wrong answer";
-        docTime = 5//incorrect answer is chosen. deduct 5 sec from timeLeft.NEED HELP HERE.
+        docTime = 5;
       }
       i++
       quizEvent();
@@ -198,6 +200,32 @@ function quizEvent() {
     scoreEl.style.display = "block";//brings up the final score
     userEl.style.display = "block";
     scoreEl.textContent = "Your Score: " + totalScore + "%";
-
   }
 
+//High Scores Display
+userSubmit.addEventListener("click", function () {
+  displayHighScores();  
+});
+var highScores = JSON.parse(localStorage.getItem(highScores)) || [];
+var score = 0;
+
+function displayHighScores() {
+    highScores.forEach(function() {
+    var div = document.createElement("div");
+    div.innerHTML = score.userInitials + " : " + score.scoreDisplay;
+    content.appendChild(div);
+    getInitials();
+  });
+}
+
+function getInitials() {
+    displayHighScores();
+    const initials = userInitials;
+    highScores.push({
+    initials : initials,
+    score : score
+  })
+  localStorage.setItem("highScores", JSON.stringify(highScores));
+  displayHighScores();
+  console.log(highScores);
+};

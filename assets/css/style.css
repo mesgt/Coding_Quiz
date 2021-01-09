@@ -60,7 +60,7 @@ body {
     margin-bottom: 40px;;
 }
 
-#begin {
+#begin, #clear, #home {
     background-color: rgb(226, 224, 224);
     font-size: 30px;
     margin-bottom: 20px;
