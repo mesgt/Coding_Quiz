@@ -33,29 +33,29 @@ var timeInterval;
 //Q&A Array
 var qArr = [
   {
-    q: "What color is the sky?",
-    opt: ["blue-q1", "grey-q1", "white-q1", "black-q1", "yellow-q1"],
-    ans: "blue-q1"
+    q: "Where are Jared Padalecki and Jensen Ackles from?",
+    opt: ["Texas", "Canada", "Washington", "Alaska", "Colorado"],
+    ans: "Texas"
   },
   {
-    q: "What color is the laptop?",
-    opt: ["blue-q2", "grey-q2", "white-q2", "black-q2", "yellow-q2"],
-    ans: "grey-q2"
+    q: "When did Jared Padalecki meet his wife- Genevieve Cortese?",
+    opt: ["2000", "2005", "2009", "2011", "2017"],
+    ans: "2009"
   },
   {
-    q: "What color is the ceiling?",
-    opt: ["blue-q3", "grey-q3", "white-q3", "black-q3", "yellow-q3"],
-    ans: "white-q3"
+    q: "Supernatural is filmed at one of the most popular filming locations in the world. Where is it?",
+    opt: ["Denver, Colorado", "Hollywood, California", "Seattle, Washington", "Minot, North Dakota", "Vancouver, British Columbia"],
+    ans: "Vancouver, British Columbia"
   },
   {
-    q: "What color is the screen background?",
-    opt: ["blue-q4", "grey-q4", "white-q4", "black-q4", "yellow-q4"],
-    ans: "black-q4"
+    q: "When was Supernatural originally set to end?",
+    opt: ["2007", "2008", "2009", "2010", "2011"],
+    ans: "2010"
   },
   {
-    q: "What color is the banana?",
-    opt: ["blue-q5", "grey-q5", "white-q5", "black-q5", "yellow-q5"],
-    ans: "yellow-q5"
+    q: "How long did Kripke work on the script before it made it onto the small screen?",
+    opt: ["10 years", "5 years", "2 years", "1 year", "6 months"],
+    ans: "10 years"
   },
 ];
 
