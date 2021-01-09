@@ -227,3 +227,6 @@ function getInitials() {
 
 
 //Return to Quiz button
+redoQuiz.addEventListener("click", function () {
+redoQuiz.setAttribute("href", "./index.html");
+});
