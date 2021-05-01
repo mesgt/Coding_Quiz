@@ -7,7 +7,7 @@ var userEl = document.getElementById("score");
 var resultEl = document.getElementById("questionOutcome");
 var userInitials = document.getElementById("initials");
 var userSubmit = document.getElementById("submit");
-var quizReset = document.getElementById("clear"); //btn on highScores.html
+var scoreReset = document.getElementById("clear"); //btn on highScores.html
 var redoQuiz = document.getElementById("home"); //btn on highScores.html
 
 var qEl = document.getElementById("question");
@@ -107,7 +107,7 @@ function quizEvent() {
     finalScore();
     timeEl.textContent = "";
   }
-}
+};
     ansA.addEventListener("click", function () { 
       var correctAns = qArr[i].ans;
       if (optOne === correctAns) { 
@@ -194,7 +194,7 @@ function quizEvent() {
     scoreEl.style.display = "block";
     userEl.style.display = "block";
     scoreEl.textContent = "Your Score: " + totalScore + "%";
-  }
+  };
 
 //High Scores Display
 userSubmit.addEventListener("click", function () {
@@ -210,7 +210,7 @@ function displayHighScores() {
     content.appendChild(div);
     getInitials();
   });
-}
+};
 
 function getInitials() {
     displayHighScores();
@@ -224,7 +224,10 @@ function getInitials() {
 };
 
 //Reset button
-
+scoreReset.addEventListener("click", function() {
+  var sReset = document.getElementById("highScoresForm");
+  sReset.reset();
+});
 
 //Return to Quiz button
 redoQuiz.addEventListener("click", function () {
